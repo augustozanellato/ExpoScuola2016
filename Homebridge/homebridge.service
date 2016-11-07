@@ -1,0 +1,10 @@
+[Unit]
+Description=Homebridge
+
+[Service]
+Type=simple
+User=augusto
+ExecStart=/home/augusto/.homebridge/start.sh
+
+[Install]
+WantedBy=multi-user.target

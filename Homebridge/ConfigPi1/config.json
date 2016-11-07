@@ -1,0 +1,44 @@
+{
+  "bridge": {
+       "name": "ExpoScuola 2016 ITI Severi Pi1",
+       "username": "CA:21:3F:E2:DE:24",
+       "port": 51826,
+       "pin": "031-45-154"
+    },
+  "accessories": [
+    {       
+      "accessory": "CMD",
+      "service": "Light",
+      "brightnessHandling": "yes",
+      "name": "PWM GPIO 16 Pi1",	
+      "on_cmd": "/home/a*/.homebridge/pwm.sh w 16 100",
+      "off_cmd": "/home/a*/.homebridge/pwm.sh w 16 0",
+      "brightness_cmd": "/home/a*/.homebridge/pwm.sh w 16 %b",
+      "get_status_cmd": "/home/a*/.homebridge/pwm.sh r 16"	
+    },
+    {
+      "accessory": "cmdSwitch",
+      "name": "Servo GPIO20 Pi1",
+      "state_cmd": "/home/*/.homebridge/servo.sh r 20",
+      "on_cmd": "/home/*/.homebridge/servo.sh w 20 2200 on",
+      "off_cmd": "/home/*/.homebridge/servo.sh w 20 1600 off",
+      "manufacturer": "ITI F.Severi",
+      "model": "HomeKit Servo v1.0",
+      "serial": "00000001"
+    },
+    {
+      "accessory": "cmdSwitch",
+      "name": "Servo GPIO21 Pi1",
+      "state_cmd": "/home/*/.homebridge/servo.sh r 21",
+      "on_cmd": "/home/*/.homebridge/servo.sh w 21 2200 on",
+      "off_cmd": "/home/*/.homebridge/servo.sh w 21 1600 off",
+      "manufacturer": "ITI F.Severi",
+      "model": "HomeKit Servo v1.0",
+      "serial": "00000002"
+    },
+    {
+      "accessory": "PiTemperature",
+      "name": "Temperatura Raspberry Pi Augusto"
+    }
+  ]
+}
