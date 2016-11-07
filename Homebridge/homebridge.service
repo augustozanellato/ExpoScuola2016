@@ -3,8 +3,8 @@ Description=Homebridge
 
 [Service]
 Type=simple
-User=augusto
-ExecStart=/home/augusto/.homebridge/start.sh
+User=root
+ExecStart=/home/*/.homebridge/start.sh
 
 [Install]
 WantedBy=multi-user.target
