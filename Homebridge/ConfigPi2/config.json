@@ -1,0 +1,74 @@
+{
+  "bridge": {
+       "name": "ExpoScuola 2016 ITI Severi Pi2",
+       "username": "CA:21:3F:E2:DE:27",
+       "port": 51823,
+       "pin": "031-45-154"
+    },
+  "accessories": [
+    {
+      "accessory": "cmdSwitch",
+      "name": "Servo GPIO20 Pi2",
+      "state_cmd": "/home/*/.homebridge/servo.sh r 20",
+      "on_cmd": "/home/*/.homebridge/servo.sh w 20 2500 on",
+      "off_cmd": "/home/*/.homebridge/servo.sh w 20 1600 off",
+      "manufacturer": "ITI F.Severi",
+      "model": "HomeKit Servo v1.0",
+      "serial": "00000002"
+    },
+    {
+      "accessory": "cmdSwitch",
+      "name": "Servo GPIO21 Pi2",
+      "state_cmd": "/home/*/.homebridge/servo.sh r 21",
+      "on_cmd": "/home/*/.homebridge/servo.sh w 20 2500 on",
+      "off_cmd": "/home/*/.homebridge/servo.sh w 20 1600 off",
+      "manufacturer": "ITI F.Severi",
+      "model": "HomeKit Servo v1.0",
+      "serial": "00000002"
+    },
+    {       
+      "accessory": "CMD",
+      "service": "Light",
+      "brightnessHandling": "yes",
+      "name": "Led CH1",	
+      "on_cmd": "/home/a*/.homebridge/pwm.sh w 5 100",
+      "off_cmd": "/home/a*/.homebridge/pwm.sh w 5 0",
+      "brightness_cmd": "/home/a*/.homebridge/pwm.sh w 5 %b",
+      "get_status_cmd": "/home/a*/.homebridge/pwm.sh r 5"	
+    },
+    {       
+      "accessory": "CMD",
+      "service": "Light",
+      "brightnessHandling": "yes",
+      "name": "LED CH2",	
+      "on_cmd": "/home/a*/.homebridge/pwm.sh w 6 100",
+      "off_cmd": "/home/a*/.homebridge/pwm.sh w 6 0",
+      "brightness_cmd": "/home/a*/.homebridge/pwm.sh w 6 %b",
+      "get_status_cmd": "/home/a*/.homebridge/pwm.sh r 6"	
+    },
+    {       
+      "accessory": "CMD",
+      "service": "Light",
+      "brightnessHandling": "yes",
+      "name": "LED CH3",	
+      "on_cmd": "/home/a*/.homebridge/pwm.sh w 13 100",
+      "off_cmd": "/home/a*/.homebridge/pwm.sh w 13 0",
+      "brightness_cmd": "/home/a*/.homebridge/pwm.sh w 13 %b",
+      "get_status_cmd": "/home/a*/.homebridge/pwm.sh r 13"	
+    },
+    {       
+      "accessory": "CMD",
+      "service": "Light",
+      "brightnessHandling": "yes",
+      "name": "LED CH4",	
+      "on_cmd": "/home/a*/.homebridge/pwm.sh w 19 100",
+      "off_cmd": "/home/a*/.homebridge/pwm.sh w 19 0",
+      "brightness_cmd": "/home/a*/.homebridge/pwm.sh w 19 %b",
+      "get_status_cmd": "/home/a*/.homebridge/pwm.sh r 19"	
+    },
+    {
+      "accessory": "PiTemperature",
+      "name": "Temperatura Raspberry Pi Augusto"
+    }
+    ]
+}
