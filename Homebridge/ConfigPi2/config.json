@@ -8,20 +8,20 @@
   "accessories": [
     {
       "accessory": "cmdSwitch",
-      "name": "Servo GPIO20 Pi2",
-      "state_cmd": "/home/*/.homebridge/servo.sh r 20",
-      "on_cmd": "/home/*/.homebridge/servo.sh w 20 2500 on",
-      "off_cmd": "/home/*/.homebridge/servo.sh w 20 1600 off",
+      "name": "Primo Scambio",
+      "state_cmd": "/home/alarm/.homebridge/servo.sh r 20",
+      "on_cmd": "/home/alarm/.homebridge/servo.sh w 20 1600 on",
+      "off_cmd": "/home/alarm/.homebridge/servo.sh w 20 2500 off",
       "manufacturer": "ITI F.Severi",
       "model": "HomeKit Servo v1.0",
-      "serial": "00000002"
+      "serial": "00000001"
     },
     {
       "accessory": "cmdSwitch",
-      "name": "Servo GPIO21 Pi2",
-      "state_cmd": "/home/*/.homebridge/servo.sh r 21",
-      "on_cmd": "/home/*/.homebridge/servo.sh w 20 2500 on",
-      "off_cmd": "/home/*/.homebridge/servo.sh w 20 1600 off",
+      "name": "Secondo Scambio",
+      "state_cmd": "/home/alarm/.homebridge/servo.sh r 21",
+      "on_cmd": "/home/alarm/.homebridge/servo.sh w 21 2500 on",
+      "off_cmd": "/home/alarm/.homebridge/servo.sh w 21 1600 off",
       "manufacturer": "ITI F.Severi",
       "model": "HomeKit Servo v1.0",
       "serial": "00000002"
@@ -68,7 +68,27 @@
     },
     {
       "accessory": "PiTemperature",
-      "name": "Temperatura Raspberry Pi Augusto"
+      "name": "Pi a terra"
+    },
+    {
+        "accessory": "TemperatureCMD",
+        "name": "BJT Led CH1",
+        "command": "cat /tmp/temp1"
+    },
+    {
+        "accessory": "TemperatureCMD",
+        "name": "BJT Led CH2",
+        "command": "cat /tmp/temp2"
+    },
+    {
+        "accessory": "TemperatureCMD",
+        "name": "BJT Led CH3",
+        "command": "cat /tmp/temp3"
+    },
+    {
+        "accessory": "TemperatureCMD",
+        "name": "BJT Led CH4",
+        "command": "cat /tmp/temp4"
     }
-    ]
+  ]
 }

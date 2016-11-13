@@ -1,8 +1,8 @@
 {
   "bridge": {
        "name": "ExpoScuola 2016 ITI Severi Pi1",
-       "username": "CA:21:3F:E2:DE:24",
-       "port": 51826,
+       "username": "CA:21:3F:E2:DE:22",
+       "port": 51816,
        "pin": "031-45-154"
     },
   "accessories": [
@@ -10,28 +10,38 @@
       "accessory": "CMD",
       "service": "Light",
       "brightnessHandling": "yes",
-      "name": "PWM GPIO 16 Pi1",	
-      "on_cmd": "/home/*/.homebridge/pwm.sh w 16 100",
-      "off_cmd": "/home/*/.homebridge/pwm.sh w 16 0",
-      "brightness_cmd": "/home/*/.homebridge/pwm.sh w 16 %b",
-      "get_status_cmd": "/home/*/.homebridge/pwm.sh r 16"	
+      "name": "PWM GPIO 16 Pi Augusto",	
+      "on_cmd": "/home/a*/.homebridge/pwm.sh w 16 100",
+      "off_cmd": "/home/a*/.homebridge/pwm.sh w 16 0",
+      "brightness_cmd": "/home/a*/.homebridge/pwm.sh w 16 %b",
+      "get_status_cmd": "/home/a*/.homebridge/pwm.sh r 16"	
+    },
+    {
+      "accessory": "CMD",
+      "service": "Light",
+      "brightnessHandling": "yes",
+      "name": "Retromarcia",
+      "on_cmd": "/home/a*/.homebridge/pwm.sh w 17 100",
+      "off_cmd": "/home/a*/.homebridge/pwm.sh w 17 0",
+      "brightness_cmd": "/home/a*/.homebridge/pwm.sh w 17 %b",
+      "get_status_cmd": "/home/a*/.homebridge/pwm.sh r 17"
     },
     {
       "accessory": "cmdSwitch",
-      "name": "Servo GPIO20 Pi1",
-      "state_cmd": "/home/*/.homebridge/servo.sh r 20",
-      "on_cmd": "/home/*/.homebridge/servo.sh w 20 2200 on",
-      "off_cmd": "/home/*/.homebridge/servo.sh w 20 1600 off",
+      "name": "Servo GPIO20 Pi Augusto",
+      "state_cmd": "/home/a*/.homebridge/servo.sh r 20",
+      "on_cmd": "/home/a*/.homebridge/servo.sh w 20 2200 on",
+      "off_cmd": "/home/a*/.homebridge/servo.sh w 20 1600 off",
       "manufacturer": "ITI F.Severi",
       "model": "HomeKit Servo v1.0",
       "serial": "00000001"
     },
     {
       "accessory": "cmdSwitch",
-      "name": "Servo GPIO21 Pi1",
-      "state_cmd": "/home/*/.homebridge/servo.sh r 21",
-      "on_cmd": "/home/*/.homebridge/servo.sh w 21 2200 on",
-      "off_cmd": "/home/*/.homebridge/servo.sh w 21 1600 off",
+      "name": "Servo GPIO21 Pi Augusto",
+      "state_cmd": "/home/a*/.homebridge/servo.sh r 21",
+      "on_cmd": "/home/a*/.homebridge/servo.sh w 21 2200 on",
+      "off_cmd": "/home/a*/.homebridge/servo.sh w 21 1600 off",
       "manufacturer": "ITI F.Severi",
       "model": "HomeKit Servo v1.0",
       "serial": "00000002"
