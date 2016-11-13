@@ -26,6 +26,6 @@ I plugin che abbiamo utilizzato sono:
 - homebridge-cmdswitch
 - homebridge-cmd_light_control
 - homebridge-pi
+- homebridge-temperature-cmd
 
 Il codice per associare entrambi i Raspberry Pi ai vostri dispositivi è "031-45-154"
-
