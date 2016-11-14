@@ -1,40 +1,56 @@
-#!/bin/env python2
-
 from time import sleep
 import serial
 
-# Se vengono usate schede Arduino compatibili con chip seriale
-# CH340G modificare '/dev/ttyACM0' in '/dev/ttyUSB0'
 
-try:
-	ardu = serial.Serial('/dev/ttyACM0', 9600)
-	ardu.readline()
-except serial.serialutil.SerialException:
-	print "Collega Arduino"
-	exit(1)
+def getdata(ser):
+	data = ser.readline()
+	
+	data = data.split(' ')
+	data[3] = data[3][:2]
+	
+	return data
+
+
+serials = ['/dev/ttyACM0', '/dev/ttyUSB0']
+
+
+connected = False
+
+
+while not connected:
+	
+	for ser in serials:
+		
+		try:
+			ardu = serial.Serial(ser, 9600)
+			ardu.readline()
+			connected = True
+			
+		except serial.serialutil.SerialException:
+			continue
+
+	sleep(1)
+
 
 while True:
 	try:
-		data = ardu.readline()
-		data = data.split(' ')
-		data[3] = data[3][:2]
-		#print data
-		temp1 = data[0]
-		temp2 = data[1]
-		temp3 = data[2]
-		temp4 = data[3]
-		#print temp1
-		#print temp2
-		#print temp3
-		#print temp4
+		data = getdata(ardu)
+		
 		with open('/tmp/temp1', 'w') as file1:
-			file1.write(temp1)
+			file1.write(data[0])
+			
 		with open('/tmp/temp2', 'w') as file2:
-			file2.write(temp2)
+			file2.write(data[1])
+			
 		with open('/tmp/temp3', 'w') as file3:
-			file3.write(temp3)
+			file3.write(data[2])
+			
 		with open('/tmp/temp4', 'w') as file4:
-			file4.write(temp4)
-		sleep(0.5)
+			file4.write(data[3])
+		sleep(1)
+		
+	except KeyboardInterrupt:
+		exit(0)
+		
 	except:
 		continue
