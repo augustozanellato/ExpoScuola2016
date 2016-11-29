@@ -1,3 +1,10 @@
+/* Script per rilevare la temperatura dei BJT
+ * che pilotano le 4 strisce led facendo la media
+ * di 512 misure e poi inviandola via seriale
+ * By Augusto Zanellato
+ * ITI F. Severi
+ * ExpoScuola 2016
+ */
 int n_campioni;
 
 float valore1;
